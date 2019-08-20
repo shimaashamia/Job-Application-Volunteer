@@ -16,9 +16,9 @@ class CreateIdentifiesTable extends Migration
         Schema::create('identifies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('id_number')->unique();
-            $table->integer('ident_id')->unsigned();
+           $table->integer('ident_id')->unsigned();
             $table->timestamps();
-            $table->foreign('ident_id')->references('id')->on('dataorders')->onDelete('cascade');
+           $table->foreign('ident_id')->references('id')->on('dataorders')->onDelete('cascade');
 
         });
     }

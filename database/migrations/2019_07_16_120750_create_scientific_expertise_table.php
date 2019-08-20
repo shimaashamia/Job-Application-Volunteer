@@ -19,9 +19,9 @@ class CreateScientificExpertiseTable extends Migration
             $table->date('Start_Date');
             $table->date('Expiry_date');
             $table->string('Occupationn');
-            $table->integer('expertise_id')->unsigned();
+           $table->integer('expertise_id')->unsigned();
             $table->timestamps();
-            $table->foreign('expertise_id')->references('id')->on('dataorders')->onDelete('cascade');
+           $table->foreign('expertise_id')->references('id')->on('dataorders')->onDelete('cascade');
 
         });
     }

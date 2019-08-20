@@ -19,9 +19,9 @@ class CreateTrainingCoursesTable extends Migration
             $table->string('Place_get');
             $table->string('Date_get');
             $table->string('number_hours');
-            $table->integer('training_id')->unsigned();
+           $table->integer('training_id')->unsigned();
             $table->timestamps();
-            $table->foreign('training_id')->references('id')->on('dataorders')->onDelete('cascade');
+           $table->foreign('training_id')->references('id')->on('dataorders')->onDelete('cascade');
         });
     }
 

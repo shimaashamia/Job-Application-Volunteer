@@ -14,16 +14,15 @@ class UpdateDataordersTable extends Migration
     public function up()
     {
         Schema::table('dataorders', function (Blueprint $table) {
-            // $table->integer('number_id')->unsigned();
+            // $table->integer('ident_id')->unsigned();
             // $table->integer('academic_id')->unsigned();
             // $table->integer('expertise_id')->unsigned();
             // $table->integer('training_id')->unsigned();
 
-            // $table->foreign('number_id')->references('id')->on('idnumbers')->onDelete('cascade');
-            // $table->foreign('academic_id')->references('id')->on('academic_achievement')->onDelete('cascade');
-            // $table->foreign('expertise_id')->references('id')->on('scientific_expertise')->onDelete('cascade');
-            // $table->foreign('training_id')->references('id')->on('training_courses')->onDelete('cascade');
-
+            // $table->foreign('ident_id')->references('id')->on('dataorders')->onDelete('cascade');
+            // $table->foreign('academic_id')->references('id')->on('dataorders')->onDelete('cascade');
+            // $table->foreign('expertise_id')->references('id')->on('dataorders')->onDelete('cascade');
+            // $table->foreign('training_id')->references('id')->on('dataorders')->onDelete('cascade');
           
         });
     }

@@ -68,8 +68,26 @@ form{
 }
 
 .topright:hover {color: red;}
+body{
+  direction:rtl;
+}
+table, td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  direction:rtl;
+}
 
-
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.h2, h2 {
+    font-size: 2rem;
+    text-align: center;
+}
 </style>
         <title>Laravel</title>
         </head>

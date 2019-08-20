@@ -15,4 +15,9 @@ class Identify extends Model
     {
         return $this->belongsTo(Data::class,'data_id','id');
     }
+
+    // public function Data()
+    // {
+    //     return $this->hasMany(Data::class,'identifies_id','id','foreign_key');
+    // }
 }

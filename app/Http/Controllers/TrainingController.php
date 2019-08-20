@@ -19,7 +19,7 @@ class TrainingController extends Controller
             'Place_get'=>'require',
             'Date_get'=>'require',
             'number_hours'=>'require',
-            'training_id'=>'require',
+             'training_id'=>'require',
            ]);
             $training=new Training();
              $training->fill($request->all());
@@ -29,4 +29,36 @@ class TrainingController extends Controller
                 'message' => 'Success'
             ], 200);
          }
+         public function destroy($id)
+         {
+             $training = Training::find($id);
+             $training->delete();
+             return response()->json([
+                 'training'=>$training,
+             ],200);
+             $training->save();
+         }
+         public function edit($id)
+         {
+             $training = Training::find($id);
+             return response()->json([
+                 'training'=>$training,
+             ],200);
+         }
+
+         public function update(Request $request, $id)
+         {
+             $training =Training::find($id);
+             $training->name_course  = $request->name_course ;
+             $training->Place_get = $request->Place_get;
+             $training->Date_get = $request->Date_get;
+             $training->number_hours = $request->number_hours;
+             $training->training_id = $request->training_id;
+            // $training->update();
+             $training->save();
+             return response()->json([
+                 'training'=>$training,
+             ],200);
+         }
+     
 }

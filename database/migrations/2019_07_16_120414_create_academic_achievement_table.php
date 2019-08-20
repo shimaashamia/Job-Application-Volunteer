@@ -19,10 +19,10 @@ class CreateAcademicAchievementTable extends Migration
             $table->string('Specialization');
             $table->double('average');
             $table->string('Graduation_Year');
-            $table->integer('academic_id')->unsigned();
+           $table->integer('academic_id')->unsigned();
             $table->timestamps();
            
-            $table->foreign('academic_id')->references('id')->on('dataorders')->onDelete('cascade');
+           $table->foreign('academic_id')->references('id')->on('dataorders')->onDelete('cascade');
 
         });
     }

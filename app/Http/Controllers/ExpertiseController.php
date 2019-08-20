@@ -14,6 +14,16 @@ class ExpertiseController extends Controller
     ], 200);    
   }
     
+  public function destroy($id)
+  {
+      $expertise = Expertise::find($id);
+      $expertise->delete();
+      return response()->json([
+          'expertise'=>$expertise,
+      ],200);
+      $expertise->save();
+  }
+
     public function store(Request $request){
         Validator::make($request->all(),[
             'Workplace'=>'require',
@@ -30,4 +40,30 @@ class ExpertiseController extends Controller
                 'message' => 'Success'
             ], 200);
          }
+
+         public function edit($id)
+         {
+             $expertise = Expertise::find($id);
+             return response()->json([
+                 'expertise'=>$expertise,
+             ],200);
+ 
+            }
+
+    
+ 
+     public function update(Request $request, $id)
+     {
+         $expertise =Expertise::find($id);
+         $expertise->Workplace  = $request->Workplace ;
+         $expertise->Start_Date = $request->Start_Date;
+         $expertise->Expiry_date = $request->Expiry_date;
+         $expertise->Occupationn = $request->Occupationn;
+         $expertise->expertise_id = $request->expertise_id;
+       //  $expertise->update();
+        $expertise->save();
+         return response()->json([
+             'expertise'=>$expertise,
+         ],200);
+     }
 }
